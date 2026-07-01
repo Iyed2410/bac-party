@@ -402,7 +402,6 @@ h3 {
 }
 
 .countdown-grid article,
-.wide-panel,
 .location-panel,
 .rules-grid article,
 .lux-form,
@@ -545,19 +544,6 @@ h3 {
 .rules-grid {
   display: grid;
   gap: 1rem;
-}
-
-.wide-panel {
-  padding: clamp(1.2rem, 5vw, 2rem);
-  text-align: center;
-}
-
-.wide-panel p {
-  margin: 0.35rem auto;
-  max-width: 52rem;
-  color: var(--white);
-  font-size: clamp(1.05rem, 4vw, 1.45rem);
-  font-weight: 800;
 }
 
 .map-layout {
