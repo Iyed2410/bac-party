@@ -345,7 +345,7 @@ h3 {
   left: 0.75rem;
   z-index: 40;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.3rem;
   border: 1px solid rgba(212, 175, 55, 0.24);
   border-radius: 1.25rem;
@@ -402,14 +402,10 @@ h3 {
 }
 
 .countdown-grid article,
-.feature-card,
 .wide-panel,
-.upload-note,
 .location-panel,
 .rules-grid article,
-.photo-card,
 .lux-form,
-.qr-shell,
 .admin-dashboard,
 .guest-pill {
   border: 1px solid var(--line);
@@ -546,73 +542,9 @@ h3 {
   color: #ffb4a8;
 }
 
-.memory-form {
-  margin: 0 auto 1.5rem;
-}
-
-.card-grid,
-.gallery-grid,
 .rules-grid {
   display: grid;
   gap: 1rem;
-}
-
-.feature-card {
-  padding: 1.1rem;
-}
-
-.feature-card span {
-  display: block;
-  color: var(--gold-soft);
-  font-weight: 900;
-}
-
-.feature-card p {
-  margin: 0.55rem 0 0;
-  color: var(--muted);
-}
-
-.empty-card {
-  text-align: center;
-}
-
-.photo-card {
-  display: grid;
-  min-height: 15rem;
-  align-items: end;
-  padding: 1.1rem;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, transparent, rgba(5, 5, 5, 0.84)),
-    radial-gradient(circle at 22% 22%, rgba(245, 215, 110, 0.2), transparent 12rem),
-    rgba(255, 255, 255, 0.055);
-}
-
-.photo-card-image {
-  background:
-    linear-gradient(180deg, rgba(5, 5, 5, 0.08), rgba(5, 5, 5, 0.82)),
-    url("assets/hero-luxury-party.png") center / cover;
-}
-
-.photo-card span {
-  color: var(--gold-soft);
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 1.7rem;
-  font-weight: 800;
-}
-
-.upload-note {
-  margin-top: 1rem;
-  padding: 1rem;
-}
-
-.upload-note strong {
-  color: var(--gold-soft);
-}
-
-.upload-note p {
-  margin: 0.35rem 0 0;
-  color: var(--muted);
 }
 
 .wide-panel {
@@ -680,41 +612,6 @@ h3 {
   padding: 0.7rem 1rem;
   color: var(--gold-soft);
   font-weight: 900;
-}
-
-.qr-shell {
-  width: min(24rem, 100%);
-  margin: 0 auto;
-  padding: 1.1rem;
-  text-align: center;
-}
-
-.qr-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: min(18rem, 100%);
-  aspect-ratio: 1;
-  margin: 0 auto 1rem;
-  border: 0.9rem solid #f7df86;
-  border-radius: 1rem;
-  padding: 0.7rem;
-  background: #050505;
-  overflow: hidden;
-}
-
-.qr-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  border-radius: 0.4rem;
-  background: #050505;
-}
-
-.qr-shell p {
-  margin: 0;
-  color: var(--muted);
 }
 
 .admin-section {
@@ -843,12 +740,7 @@ h3 {
   }
 
   .genre-grid,
-  .gallery-grid,
   .rules-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -880,12 +772,10 @@ h3 {
     order: 2;
   }
 
-  .memory-form,
   .admin-login {
     width: min(720px, 100%);
   }
 
-  .gallery-grid,
   .rules-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

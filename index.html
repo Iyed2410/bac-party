@@ -27,8 +27,6 @@
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="#rsvp">RSVP</a>
         <a href="#music">Music</a>
-        <a href="#memories">Memories</a>
-        <a href="#gallery">Gallery</a>
         <a href="#map">Map</a>
       </nav>
     </header>
@@ -74,8 +72,6 @@
         <a href="#rsvp">RSVP</a>
         <a href="#music">Music</a>
         <a href="#map">Map</a>
-        <a href="#memories">Memories</a>
-        <a href="#gallery">Gallery</a>
       </nav>
 
       <section id="countdown" class="section countdown-section">
@@ -221,68 +217,6 @@
         </form>
       </section>
 
-      <section id="memories" class="section memory-section">
-        <div class="section-intro centered">
-          <p class="eyebrow">Bac memories loading</p>
-          <h2>Memory Wall</h2>
-          <p>Leave a message, a memory, or a classy roast for Iyed.</p>
-        </div>
-
-        <form class="lux-form memory-form" id="memoryForm">
-          <label>
-            <span>Name</span>
-            <input name="fullName" type="text" autocomplete="name" required />
-          </label>
-          <label>
-            <span>Memory/message</span>
-            <textarea name="memoryMessage" rows="4" maxlength="500" required></textarea>
-          </label>
-          <label>
-            <span>Friendly roast</span>
-            <textarea
-              name="funnyRoast"
-              rows="3"
-              maxlength="300"
-              placeholder="Keep it clean, keep it classy"
-            ></textarea>
-          </label>
-          <button class="button primary form-submit" type="submit">Add Message</button>
-          <p class="form-status" data-status-for="memory" role="status" aria-live="polite"></p>
-        </form>
-
-        <div class="card-grid memory-grid" id="memoryWall" aria-live="polite">
-          <article class="feature-card empty-card">
-            <span>Approved memories will appear here.</span>
-            <p>Private messages stay in Iyed’s Google Sheet until he approves them.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="gallery" class="section gallery-section">
-        <div class="section-intro">
-          <p class="eyebrow">After party archive</p>
-          <h2>Photo Gallery</h2>
-          <p>Best moments will be here. Save this page, the memories are coming.</p>
-        </div>
-
-        <div class="gallery-grid">
-          <article class="photo-card photo-card-image">
-            <span>Photos coming after the party.</span>
-          </article>
-          <article class="photo-card">
-            <span>Best moments will be here.</span>
-          </article>
-          <article class="photo-card">
-            <span>Bac memories loading...</span>
-          </article>
-        </div>
-
-        <div class="upload-note">
-          <strong>Future uploads</strong>
-          <p>Replace these cards with party photos when the album is ready.</p>
-        </div>
-      </section>
-
       <section id="dress-code" class="section dress-section">
         <div class="section-intro centered">
           <p class="eyebrow">Dress code</p>
@@ -348,19 +282,6 @@
         </div>
         <div class="guest-list" id="guestList" aria-live="polite">
           <article class="guest-pill">Guest list opens after RSVPs.</article>
-        </div>
-      </section>
-
-      <section id="qr" class="section qr-section">
-        <div class="section-intro centered">
-          <p class="eyebrow">Save the invite</p>
-          <h2>Scan to Open Iyed’s Bac Party Website</h2>
-          <p>Save this page. Photos and memories will be added after the party.</p>
-        </div>
-        <div class="qr-shell">
-          <div class="qr-placeholder" aria-label="QR code">
-            <img class="qr-image" src="assets/Qr-code.png" alt="QR-code to open the party website" />
-          </div>
         </div>
       </section>
 

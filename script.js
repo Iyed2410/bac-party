@@ -143,43 +143,12 @@ function renderGuestList(guests = []) {
     .join("");
 }
 
-function renderMemoryWall(memories = []) {
-  const root = qs("#memoryWall");
-
-  if (!memories.length) {
-    root.innerHTML = `
-      <article class="feature-card empty-card">
-        <span>Approved memories will appear here.</span>
-        <p>Private messages stay in Iyed’s Google Sheet until he approves them.</p>
-      </article>
-    `;
-    return;
-  }
-
-  root.innerHTML = memories
-    .map(
-      (memory) => `
-        <article class="feature-card">
-          <span>${escapeHtml(memory.publicDisplayName || getFirstName(memory.fullName))}</span>
-          <p>${escapeHtml(memory.memoryMessage)}</p>
-          ${
-            memory.funnyRoast
-              ? `<p><strong>Roast:</strong> ${escapeHtml(memory.funnyRoast)}</p>`
-              : ""
-          }
-        </article>
-      `,
-    )
-    .join("");
-}
-
 async function loadPublicData() {
   if (!isConfigured()) return;
 
   try {
     const result = await fetchSheet({ action: "public" });
     renderGuestList(result.guestList || []);
-    renderMemoryWall(result.memories || []);
   } catch (error) {
     console.warn(error);
   }
@@ -254,34 +223,6 @@ function setupMusicForm() {
   });
 }
 
-function setupMemoryForm() {
-  const form = qs("#memoryForm");
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!form.reportValidity()) return;
-
-    const data = new FormData(form);
-    const payload = {
-      type: "memory",
-      fullName: data.get("fullName").trim(),
-      memoryMessage: data.get("memoryMessage").trim(),
-      funnyRoast: data.get("funnyRoast").trim(),
-    };
-
-    setStatus("memory", "Saving...");
-    withButtonState(form, "Saving...", async () => {
-      try {
-        await sendToSheet(payload);
-        setStatus("memory", "Your message has been added to the memory wall.", "success");
-        form.reset();
-        await loadPublicData();
-      } catch (error) {
-        setStatus("memory", error.message, "error");
-      }
-    });
-  });
-}
-
 function setupAdmin() {
   const params = new URLSearchParams(window.location.search);
   if (window.location.hash === "#admin" || params.get("admin") === "1") {
@@ -313,7 +254,6 @@ function renderAdmin(data) {
   const stats = data.stats || {};
   const genreCounts = data.genreCounts || {};
   const songs = data.suggestedSongs || [];
-  const memories = data.memories || [];
   const guests = data.guestList || [];
 
   dashboard.innerHTML = `
@@ -332,19 +272,6 @@ function renderAdmin(data) {
     <section>
       <h3>Suggested Songs</h3>
       ${renderSimpleList(songs, "No songs suggested yet.")}
-    </section>
-
-    <section>
-      <h3>Memory Wall Messages</h3>
-      ${renderSimpleList(
-        memories.map(
-          (item) =>
-            `${item.fullName}: ${item.memoryMessage}${
-              item.funnyRoast ? ` | Roast: ${item.funnyRoast}` : ""
-            } | Approved: ${item.approved || "No"}`,
-        ),
-        "No messages yet.",
-      )}
     </section>
 
     <section>
@@ -395,7 +322,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCountdown();
   setupRsvpForm();
   setupMusicForm();
-  setupMemoryForm();
   setupAdmin();
   loadPublicData();
 

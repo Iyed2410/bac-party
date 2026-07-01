@@ -1,12 +1,12 @@
 # Iyed's Bac Party
 
-Mobile-first one-page invitation site with Google Sheets as the storage backend for RSVP, music votes, memory wall submissions, and the public guest list.
+Mobile-first one-page invitation site with Google Sheets as the storage backend for RSVP, music votes, and the public guest list.
 
 ## Files
 
 - `index.html` - the invitation page.
 - `styles.css` - black and gold responsive styling.
-- `script.js` - form validation, Google Apps Script fetch calls, countdown, public guest list, memory wall, and hidden admin view.
+- `script.js` - form validation, Google Apps Script fetch calls, countdown, public guest list, and hidden admin view.
 - `google-apps-script.gs` - Apps Script backend to paste into Google Apps Script.
 - `assets/hero-luxury-party.png` - generated luxury hero background.
 
@@ -44,4 +44,4 @@ startDateIso: "2026-07-04T20:00:00+01:00",
 
 Open the page with `#admin` or `?admin=1`, then enter the `ADMIN_TOKEN` value from Apps Script.
 
-The admin view reads live totals from Google Sheets. Public visitors only see approved memories and public guest display names.
+The admin view reads live totals from Google Sheets. Public visitors only see public guest display names.
