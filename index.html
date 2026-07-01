@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Iyed’s Bac Party - a black and gold luxury graduation celebration invitation."
+    />
+    <title>Iyed’s Bac Party</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#rsvp">Skip to RSVP</a>
+
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="#hero" aria-label="Iyed’s Bac Party home">
+        <span class="brand-mark">🎓</span>
+        <span>Iyed’s Bac Party</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#rsvp">RSVP</a>
+        <a href="#music">Music</a>
+        <a href="#memories">Memories</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#map">Map</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero section">
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/hero-luxury-party.png" alt="" />
+          <div class="hero-shade"></div>
+          <div class="particle-field" id="particleField"></div>
+        </div>
+
+        <div class="hero-content">
+          <p class="eyebrow">VIP Bac celebration</p>
+          <h1>Iyed’s Bac Party</h1><br>
+          <h3>My Number: +216 21 457 407</h3>
+          <p class="hero-subtitle">Bac unlocked. Time to celebrate in style.</p>
+          <p class="arabic-line" lang="ar">نجحنا يا جماعة 🎓</p>
+
+          <div class="event-strip" aria-label="Party information">
+            <div>
+              <span>Date</span>
+              <strong id="partyDateLabel">[INSERT EXACT DATE]</strong>
+            </div>
+            <div>
+              <span>Time</span>
+              <strong>Saturday night, 8:00 PM</strong>
+            </div>
+            <div>
+              <span>Vibe</span>
+              <strong>Dress clean, show up classy</strong>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#rsvp">I’m Coming</a>
+            <a class="button ghost" href="#map">Open the Map</a>
+          </div>
+        </div>
+      </section>
+
+      <nav class="quick-nav" aria-label="Quick navigation">
+        <a href="#rsvp">RSVP</a>
+        <a href="#music">Music</a>
+        <a href="#map">Map</a>
+        <a href="#memories">Memories</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+
+      <section id="countdown" class="section countdown-section">
+        <div class="section-intro">
+          <p class="eyebrow">Clock is ticking</p>
+          <h2>The countdown to the night starts now.</h2>
+        </div>
+        <div class="countdown-grid" id="countdownGrid" aria-live="polite">
+          <article>
+            <strong id="days">--</strong>
+            <span>Days</span>
+          </article>
+          <article>
+            <strong id="hours">--</strong>
+            <span>Hours</span>
+          </article>
+          <article>
+            <strong id="minutes">--</strong>
+            <span>Minutes</span>
+          </article>
+          <article>
+            <strong id="seconds">--</strong>
+            <span>Seconds</span>
+          </article>
+        </div>
+        <p class="inline-note" id="countdownNote">
+          Add the exact party date in <code>script.js</code> to activate the countdown.
+        </p>
+      </section>
+
+      <section id="rsvp" class="section split-section">
+        <div class="section-intro">
+          <p class="eyebrow">Yalla celebrate</p>
+          <h2>Send Your RSVP</h2>
+          <p>Bring your best vibe. Iyed needs the guest list clean before the night starts.</p>
+        </div>
+
+        <form class="lux-form" id="rsvpForm">
+          <label>
+            <span>Full name</span>
+            <input name="fullName" type="text" autocomplete="name" required />
+          </label>
+
+          <fieldset>
+            <legend>Will you come?</legend>
+            <label class="choice">
+              <input type="radio" name="attendanceStatus" value="I’m coming 🔥" required />
+              <span>I’m coming 🔥</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="attendanceStatus" value="Maybe 👀" />
+              <span>Maybe 👀</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="attendanceStatus" value="I can’t 😭" />
+              <span>I can’t 😭</span>
+            </label>
+          </fieldset>
+
+          <label>
+            <span>Number of guests</span>
+            <input name="guestCount" type="number" min="0" max="10" value="1" required />
+          </label>
+
+          <label>
+            <span>Message to Iyed</span>
+            <textarea
+              name="message"
+              rows="4"
+              maxlength="300"
+              placeholder="Congrats Iyed!"
+            ></textarea>
+          </label>
+
+          <button class="button primary form-submit" type="submit">Send RSVP</button>
+          <p class="form-status" data-status-for="rsvp" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="music" class="section split-section reverse">
+        <div class="section-intro">
+          <p class="eyebrow">DJ Iyed mode</p>
+          <h2>Music Vote</h2>
+          <p>Pick the sounds that deserve a spot. Bac unlocked, playlist serious.</p>
+        </div>
+
+        <form class="lux-form" id="musicForm">
+          <label>
+            <span>Full name</span>
+            <input name="fullName" type="text" autocomplete="name" required />
+          </label>
+
+          <fieldset>
+            <legend>Choose genres</legend>
+            <div class="genre-grid" id="genreGrid">
+              <label class="choice">
+                <input type="checkbox" name="genres" value="Tunisian rap" />
+                <span>Tunisian rap</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="genres" value="Afro house" />
+                <span>Afro house</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="genres" value="Phonk" />
+                <span>Phonk</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="genres" value="Funk" />
+                <span>Funk</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="genres" value="Commercial hits" />
+                <span>Commercial hits</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="genres" value="Arabic hits" />
+                <span>Arabic hits</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="genres" value="French rap" />
+                <span>French rap</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="genres" value="House music" />
+                <span>House music</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label>
+            <span>Suggested songs</span>
+            <textarea
+              name="suggestedSongs"
+              rows="4"
+              maxlength="500"
+              placeholder="One or more songs, separated by commas"
+            ></textarea>
+          </label>
+
+          <button class="button primary form-submit" type="submit">Save Music Vote</button>
+          <p class="form-status" data-status-for="music" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="memories" class="section memory-section">
+        <div class="section-intro centered">
+          <p class="eyebrow">Bac memories loading</p>
+          <h2>Memory Wall</h2>
+          <p>Leave a message, a memory, or a classy roast for Iyed.</p>
+        </div>
+
+        <form class="lux-form memory-form" id="memoryForm">
+          <label>
+            <span>Name</span>
+            <input name="fullName" type="text" autocomplete="name" required />
+          </label>
+          <label>
+            <span>Memory/message</span>
+            <textarea name="memoryMessage" rows="4" maxlength="500" required></textarea>
+          </label>
+          <label>
+            <span>Friendly roast</span>
+            <textarea
+              name="funnyRoast"
+              rows="3"
+              maxlength="300"
+              placeholder="Keep it clean, keep it classy"
+            ></textarea>
+          </label>
+          <button class="button primary form-submit" type="submit">Add Message</button>
+          <p class="form-status" data-status-for="memory" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="card-grid memory-grid" id="memoryWall" aria-live="polite">
+          <article class="feature-card empty-card">
+            <span>Approved memories will appear here.</span>
+            <p>Private messages stay in Iyed’s Google Sheet until he approves them.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery-section">
+        <div class="section-intro">
+          <p class="eyebrow">After party archive</p>
+          <h2>Photo Gallery</h2>
+          <p>Best moments will be here. Save this page, the memories are coming.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="photo-card photo-card-image">
+            <span>Photos coming after the party.</span>
+          </article>
+          <article class="photo-card">
+            <span>Best moments will be here.</span>
+          </article>
+          <article class="photo-card">
+            <span>Bac memories loading...</span>
+          </article>
+        </div>
+
+        <div class="upload-note">
+          <strong>Future uploads</strong>
+          <p>Replace these cards with party photos when the album is ready.</p>
+        </div>
+      </section>
+
+      <section id="dress-code" class="section dress-section">
+        <div class="section-intro centered">
+          <p class="eyebrow">Dress code</p>
+          <h2>Black, White, Gold, or Clean</h2>
+        </div>
+        <div class="wide-panel">
+          <p>Dress Code: Black, white, gold, or anything clean and classy.</p>
+          <p>T-shirt is okay, but come with style.</p>
+          <p>Photos will be taken, so don't come looking like you just left the exam room.</p>
+        </div>
+      </section>
+
+      <section id="map" class="section map-section">
+        <div class="section-intro">
+          <p class="eyebrow">Gold path</p>
+          <h2>Location</h2>
+          <p>Open the map and follow the gold path.</p>
+        </div>
+
+        <div class="map-layout">
+          <iframe
+            title="Iyed’s Bac Party location map"
+            src="https://www.google.com/maps?q=36.928278,10.179344&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="location-panel">
+            <span class="icon-badge">📍</span>
+            <h3>Party Location</h3>
+            <p>Use the original Google Maps link for the latest directions.</p>
+            <a
+              class="button primary"
+              href="https://goo.gl/maps/HZ3ZkuQPdAaonbyH6"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="rules" class="section rules-section">
+        <div class="section-intro centered">
+          <p class="eyebrow">Party rules</p>
+          <h2>Keep It Clean, Keep It Classy</h2>
+        </div>
+        <div class="rules-grid">
+          <article>Come with good energy.</article>
+          <article>Respect everyone.</article>
+          <article>No drama.</article>
+          <article>Photos are mandatory.</article>
+          <article>If you say "Bac was easy," you owe everyone a drink.</article>
+          <article>Celebrate like we survived something serious.</article>
+        </div>
+      </section>
+
+      <section id="guests" class="section guest-section">
+        <div class="section-intro centered">
+          <p class="eyebrow">Guest list</p>
+          <h2>Confirmed Energy</h2>
+          <p>Only first names or public display names appear here.</p>
+        </div>
+        <div class="guest-list" id="guestList" aria-live="polite">
+          <article class="guest-pill">Guest list opens after RSVPs.</article>
+        </div>
+      </section>
+
+      <section id="qr" class="section qr-section">
+        <div class="section-intro centered">
+          <p class="eyebrow">Save the invite</p>
+          <h2>Scan to Open Iyed’s Bac Party Website</h2>
+          <p>Save this page. Photos and memories will be added after the party.</p>
+        </div>
+        <div class="qr-shell">
+          <div class="qr-placeholder" aria-label="Placeholder QR code">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p>Replace this placeholder once the final website URL is published.</p>
+        </div>
+      </section>
+
+      <section id="admin" class="section admin-section" aria-labelledby="adminTitle">
+        <div class="section-intro centered">
+          <p class="eyebrow">Private view</p>
+          <h2 id="adminTitle">Iyed Admin</h2>
+          <p>Enter the Apps Script admin token to pull live totals from Google Sheets.</p>
+        </div>
+
+        <form class="lux-form admin-login" id="adminForm">
+          <label>
+            <span>Admin token</span>
+            <input name="adminToken" type="password" autocomplete="off" required />
+          </label>
+          <button class="button primary form-submit" type="submit">Load Admin</button>
+          <p class="form-status" data-status-for="admin" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="admin-dashboard" id="adminDashboard"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Iyed’s Bac Party — Bac 2026 Unlocked.</p>
+      <span>Made for one night, remembered forever.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
