@@ -59,16 +59,6 @@ img {
   max-width: 100%;
 }
 
-.qr-image {
-  width: 240px;
-  height: 240px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  border-radius: 18px;
-  background: #000;
-  padding: 10px;
-}
 
 button,
 input,
@@ -700,29 +690,26 @@ h3 {
 }
 
 .qr-placeholder {
-  display: grid;
-  width: min(14rem, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(18rem, 100%);
   aspect-ratio: 1;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.38rem;
   margin: 0 auto 1rem;
   border: 0.9rem solid #f7df86;
   border-radius: 1rem;
-  padding: 0.45rem;
+  padding: 0.7rem;
   background: #050505;
+  overflow: hidden;
 }
 
-.qr-placeholder span {
-  border-radius: 0.2rem;
-  background: #f7df86;
-  opacity: 0.92;
-}
-
-.qr-placeholder span:nth-child(2n),
-.qr-placeholder span:nth-child(7),
-.qr-placeholder span:nth-child(17),
-.qr-placeholder span:nth-child(23) {
-  opacity: 0.12;
+.qr-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 0.4rem;
+  background: #050505;
 }
 
 .qr-shell p {
